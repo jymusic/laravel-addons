@@ -13,8 +13,8 @@ class ServiceProvider extends AggregateServiceProvider
      * @var array
      */
     protected $providers = [
-        //Providers\ArtisanServiceProvider::class,
-        //ComposerServiceProvider::class,
-        //Providers\ExtensionServiceProvider::class,
+        Providers\ArtisanServiceProvider::class,
+        ComposerServiceProvider::class,
+        Providers\ExtensionServiceProvider::class,
     ];
 }
