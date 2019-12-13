@@ -1,0 +1,44 @@
+{
+	"name": "laravel-plus/extension",
+	"type": "framework-extension",
+	"description": "Laravel Extension Pack",
+	"license": "MIT",
+	"keywords": ["Laravel", "Laravel 5", "addon", "migration", "architecture", "facade"],
+	"homepage": "https://laravel.tokyo",
+	"authors": [
+		{
+			"name": "Fumio Furukawa",
+			"email": "fumio@jumilla.me"
+		}
+	],
+	"require": {
+		"php": "^7.0",
+        "laravel/framework": "^5.5",
+		"jumilla/laravel-versionia": "^2.0",
+		"jumilla/laravel-addomnipot": "^2.0",
+		"jumilla/laravel-source-generator": "^1.3"
+	},
+    "require-dev": {
+        "phpunit/phpunit": "^6.0",
+        "mockery/mockery": "~0.9"
+    },
+	"autoload": {
+		"psr-4": {
+			"LaravelPlus\\Extension\\": "src/"
+		},
+		"files": [
+			"sources/Helpers.php"
+		]
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"LaravelPlus\\Extension\\ServiceProvider"
+			],
+			"aliases": {
+			}
+		}
+	},
+	"minimum-stability": "stable",
+	"prefer-stable": true
+}
