@@ -1,0 +1,86 @@
+<?php
+
+namespace {$namespace};
+
+use {$root_namespace}\Http\Controllers\Controller as BaseController;
+use {$model_namespace}{$model_class};
+use Illuminate\Http\Request;
+
+class {$class} extends BaseController
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  \{$model_namespace}{$model_class}  $model
+     * @return \Illuminate\Http\Response
+     */
+    public function show({$model_class} $model)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  \{$model_namespace}{$model_class}  $model
+     * @return \Illuminate\Http\Response
+     */
+    public function edit({$model_class} $model)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \{$model_namespace}{$model_class}  $model
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, {$model_class} $model)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \{$model_namespace}{$model_class}  $model
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy({$model_class} $model)
+    {
+        //
+    }
+}

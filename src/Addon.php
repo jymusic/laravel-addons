@@ -1,6 +1,6 @@
 <?php
 
-namespace Jumilla\Addomnipot\Laravel;
+namespace JYmusic\LaravelAddons;
 
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Config\Repository;
@@ -36,11 +36,6 @@ class Addon
             $config = require $path.'/addon.php';
         } else {
             throw new RuntimeException("No such config file for addon '$name', need 'addon.php'.");
-        }
-
-        $version = array_get($config, 'version', 5);
-        if ($version != 5) {
-            throw new RuntimeException($version.': Illigal addon version.');
         }
 
         return $config;
@@ -124,9 +119,27 @@ class Addon
      *
      * @return int
      */
+    public function appJson()
+    {
+        $path = $this->path('app.json');
+
+        if ( file_exists( $path) ) {
+            return json_decode(file_get_contents($path), true);
+        }
+
+        return [];
+    }
+
+    /**
+     * get version.
+     *
+     * @return int
+     */
     public function version()
     {
-        return $this->config('addon.version', 5);
+        $json = $this->appJson();
+
+        return is_array($json) && isset($json['version']) ? $json['version'] : '1.0.0';
     }
 
     /**
@@ -147,9 +160,9 @@ class Addon
      *
      * @return mixed
      */
-    public function config($key, $default = null)
+    public function config($key = null, $default = null)
     {
-        return $this->config->get($key, $default);
+		return is_null($key)? $this->config->all() : $this->config->get($key, $default);
     }
 
     /**

@@ -8,7 +8,7 @@
 
 ### 它安装在存在的项目中。
 
-#### 使用 Composer 添加包 `laravel-plus/extension`
+#### 使用 Composer 添加包
 
 使用 Composer 
 
